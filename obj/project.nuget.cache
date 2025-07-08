@@ -1,36 +1,36 @@
 {
   "version": 2,
-  "dgSpecHash": "e+j6W9/k26I=",
-  "success": true,
+  "dgSpecHash": "uWaP2p/v4vA=",
+  "success": false,
   "projectFilePath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.5\\microsoft.aspnetcore.authorization.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.5\\microsoft.aspnetcore.components.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\9.0.5\\microsoft.aspnetcore.components.analyzers.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\9.0.5\\microsoft.aspnetcore.components.forms.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components.web\\9.0.5\\microsoft.aspnetcore.components.web.9.0.5.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\9.0.5\\microsoft.aspnetcore.components.webassembly.9.0.5.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\9.0.5\\microsoft.aspnetcore.components.webassembly.devserver.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.5\\microsoft.aspnetcore.metadata.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.5\\microsoft.extensions.configuration.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.5\\microsoft.extensions.configuration.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.5\\microsoft.extensions.configuration.binder.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.5\\microsoft.extensions.configuration.fileextensions.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.5\\microsoft.extensions.configuration.json.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.5\\microsoft.extensions.dependencyinjection.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.5\\microsoft.extensions.fileproviders.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.5\\microsoft.extensions.fileproviders.physical.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.5\\microsoft.extensions.filesystemglobbing.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.logging\\9.0.5\\microsoft.extensions.logging.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.5\\microsoft.extensions.logging.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.options\\9.0.5\\microsoft.extensions.options.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.5\\microsoft.extensions.primitives.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.jsinterop\\9.0.5\\microsoft.jsinterop.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.5\\microsoft.jsinterop.webassembly.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.5\\microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.5\\microsoft.net.sdk.webassembly.pack.9.0.5.nupkg.sha512",
-    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.5.nupkg.sha512"
+    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.16\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.16.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Package Microsoft.AspNetCore.Components.WebAssembly 9.0.5 is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Package Microsoft.AspNetCore.Components.WebAssembly 9.0.5 supports: net9.0 (.NETCoreApp,Version=v9.0)",
+      "projectPath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
+      "filePath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Package Microsoft.AspNetCore.Components.WebAssembly 9.0.5 is not compatible with net8.0 (.NETCoreApp,Version=v8.0) / browser-wasm. Package Microsoft.AspNetCore.Components.WebAssembly 9.0.5 supports: net9.0 (.NETCoreApp,Version=v9.0)",
+      "projectPath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
+      "filePath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly",
+      "targetGraphs": [
+        "net8.0/browser-wasm"
+      ]
+    }
+  ]
 }

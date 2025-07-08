@@ -1,3 +1,9 @@
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\web.config
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\EventEaseApp.staticwebassets.endpoints.json
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\sample-data\weather.json
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\wwwroot\sample-data\weather.json
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\wwwroot\_framework\blazor.boot.json
+E:\Proyectos\Repos\EventEaseApp.github.io\dist\dist\_framework\blazor.boot.json
 E:\Proyectos\Repos\EventEaseApp.github.io\dist\sample-data\weather.json
 E:\Proyectos\Repos\EventEaseApp.github.io\dist\_framework\blazor.boot.json
 E:\Proyectos\Repos\EventEaseApp.github.io\dist\web.config
