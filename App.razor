@@ -1,12 +1,14 @@
 ﻿<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        <RouteView RouteData="@routeData" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <EventEaseApp.Pages.NotFound />
-        </LayoutView>
+        <h3 class="text-danger text-center">404 - Página no encontrada</h3>
+        <p class="text-center">Lo que buscás no existe... o se perdió en el abismo digital.</p>
+        <div class="text-center mt-4">
+            <a href="https://charlydob.github.io/EventEaseApp.github.io/#/register" class="btn btn-primary">
+                Volver al inicio
+            </a>
+        </div>
     </NotFound>
 </Router>

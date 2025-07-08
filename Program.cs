@@ -12,5 +12,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddSingleton<EventService>();
 
+builder.Services.AddScoped(sp => 
+    new HttpClient { BaseAddress = new Uri("https://charlydob.github.io/EventEaseApp.github.io/") });
 
 await builder.Build().RunAsync();
