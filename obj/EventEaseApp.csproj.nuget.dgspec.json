@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Proyectos\\EventEaseApp\\EventEaseApp.csproj": {}
+    "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj": {}
   },
   "projects": {
-    "E:\\Proyectos\\EventEaseApp\\EventEaseApp.csproj": {
+    "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Proyectos\\EventEaseApp\\EventEaseApp.csproj",
+        "projectUniqueName": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
         "projectName": "EventEaseApp",
-        "projectPath": "E:\\Proyectos\\EventEaseApp\\EventEaseApp.csproj",
+        "projectPath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\EventEaseApp.csproj",
         "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "E:\\Proyectos\\EventEaseApp\\obj\\",
+        "outputPath": "E:\\Proyectos\\Repos\\EventEaseApp.github.io\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
