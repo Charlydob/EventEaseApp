@@ -28,28 +28,28 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/EventCard.razor]
-build_metadata.AdditionalFiles.TargetPath = RXZlbnRDYXJkLnJhem9y
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/EventDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = RXZlbnREZXRhaWxzLnJhem9y
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/EventList.razor]
-build_metadata.AdditionalFiles.TargetPath = RXZlbnRMaXN0LnJhem9y
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/EventList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/NotFound.razor]
-build_metadata.AdditionalFiles.TargetPath = Tm90Rm91bmQucmF6b3I=
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/RedirectToRegister.razor]
-build_metadata.AdditionalFiles.TargetPath = UmVkaXJlY3RUb1JlZ2lzdGVyLnJhem9y
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/RedirectToRegister.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RUb1JlZ2lzdGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Proyectos/Repos/EventEaseApp.github.io/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = UmVnaXN0ZXIucmF6b3I=
+[E:/Proyectos/Repos/EventEaseApp.github.io/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Proyectos/Repos/EventEaseApp.github.io/_Imports.razor]
