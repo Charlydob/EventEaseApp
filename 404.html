@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>Redirecting...</title>
     <script>
-      // Preserva la ruta original y redirige a index.html sin cambiarla
-    var redirectTo = '/EventEaseApp.github.io/index.html';
-    var fullUrl = window.location.origin + redirectTo + window.location.search + window.location.hash;
-    window.location.replace(fullUrl);
+        var path = window.location.pathname.replace('/EventEaseApp.github.io', '');
+        var newUrl = '/EventEaseApp.github.io/index.html#' + path + window.location.search + window.location.hash;
+        window.location.replace(newUrl);
     </script>
 </head>
 <body>
+    <p>Redirecting...</p>
 </body>
 </html>

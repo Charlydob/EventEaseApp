@@ -1,5 +1,6 @@
 @page "/EventEaseApp.github.io/eventlist"
 @inject EventService EventService
+@inject NavigationManager NavigationManager
 @using EventEaseApp.Models
 @using EventEaseApp.Services;
 
@@ -31,8 +32,20 @@ else
 
 <nav class="nav-menu text-center mt-4">
     <ul class="list-unstyled d-flex justify-content-center gap-3">
-        <li><a href="./eventlist" class="btn btn-outline-primary">Event List</a></li>
-        <li><a href="./eventdetails" class="btn btn-outline-primary">Event Details</a></li>
-        <li><a href="./register" class="btn btn-primary">Register</a></li>
+        <li>
+            <button class="btn btn-outline-primary" @onclick="@(() => NavigationManager.NavigateTo("eventlist"))">
+                Event List
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-outline-primary" @onclick="@(() => NavigationManager.NavigateTo("eventdetails"))">
+                Event Details
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary" @onclick="@(() => NavigationManager.NavigateTo("register"))">
+                Register
+            </button>
+        </li>
     </ul>
 </nav>
