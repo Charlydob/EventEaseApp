@@ -1,0 +1,58 @@
+@page "/register"
+@using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventService EventService
+
+<style>
+body { background: #e0e0e0; }
+.register-container {
+    background:#2c2c2c;color:white;
+    padding:2rem;border-radius:1rem;
+    width:100%;max-width:400px;margin:5vh auto;
+}
+.event-card input { width:100%; margin-bottom:1rem; padding:0.4rem; }
+</style>
+
+<div class="register-container">
+    <h2 class="text-center mb-4">Register Event</h2>
+
+    <EventCard
+    EventName="@eventName"
+    EventDate="@eventDate"
+    EventLocation="@eventLocation"
+    EventDescription="@eventDescription"
+    EventNameChanged="e=>eventName=e"
+    EventDateChanged="d=>eventDate=d"
+    EventLocationChanged="l=>eventLocation=l"
+    EventDescriptionChanged="d=>eventDescription=d" />
+
+    <button class="btn btn-success w-100" @onclick="RegisterEvent">Save Event</button>
+
+    <nav class="mt-4 text-center">
+    <a href="/eventlist" class="btn btn-outline-light m-1">Event List</a>
+    <a href="/eventdetails" class="btn btn-outline-light m-1">Event Details</a>
+    <a href="/register" class="btn btn-light m-1">Register</a>
+    </nav>
+    <div class="form-group">
+    <label for="eventColor">Color:</label>
+    <input type="color" id="eventColor" class="form-control" @bind="eventColor" /></div>
+</div>
+
+@code {
+    private string eventName = "";
+    private DateTime eventDate = DateTime.Now;
+    private string eventLocation = "";
+    private string eventDescription = "";
+    private string eventColor = "#007bff";
+
+    private void RegisterEvent()
+    {
+    EventService.AddEvent(new EventData { Name = eventName, Date = eventDate, Location = eventLocation, Description = eventDescription, Color = eventColor });
+
+    // Opcional: limpiar campos
+    eventName = "";
+    eventDate = DateTime.Now;
+    eventLocation = "";
+    eventDescription = "";
+    }
+}

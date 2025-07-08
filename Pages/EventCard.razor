@@ -1,0 +1,136 @@
+@using EventEaseApp.Models
+@code {
+    [Parameter]
+    public string EventName { get; set; } = "Sample Event";
+
+    [Parameter]
+    public DateTime EventDate { get; set; } = DateTime.Now.AddDays(7);
+
+    [Parameter]
+    public string EventLocation { get; set; } = "Sample Location";
+
+    [Parameter]
+    public string EventDescription { get; set; } = "Sample Description";
+
+    [Parameter]
+    public EventCallback<string> EventNameChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<DateTime> EventDateChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<string> EventLocationChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<string> EventDescriptionChanged { get; set; }  
+
+    [Parameter]
+    public bool IsReadOnly { get; set; } = false;
+
+    [Parameter] public string Color { get; set; } = "#007bff";
+        [Parameter] public EventCallback<string> ColorChanged { get; set; }
+
+    private async Task OnColorChanged(ChangeEventArgs e)
+    {
+        Color = e.Value?.ToString() ?? "#007bff";
+        await ColorChanged.InvokeAsync(Color);
+    }
+
+
+    private async Task OnNameChanged(ChangeEventArgs e)
+    {
+        EventName = e.Value?.ToString() ?? string.Empty;
+        await EventNameChanged.InvokeAsync(EventName);
+    }
+
+    private async Task OnDateChanged(ChangeEventArgs e)
+    {
+        if (DateTime.TryParse(e.Value?.ToString(), out var newDate))
+        {
+            EventDate = newDate;
+            await EventDateChanged.InvokeAsync(EventDate);
+        }
+    }
+
+    private async Task OnLocationChanged(ChangeEventArgs e)
+    {
+        EventLocation = e.Value?.ToString() ?? string.Empty;
+        await EventLocationChanged.InvokeAsync(EventLocation);
+    }
+
+    private async Task OnDescriptionChanged(ChangeEventArgs e)
+    {
+        EventDescription = e.Value?.ToString() ?? string.Empty;
+        await EventDescriptionChanged.InvokeAsync(EventDescription);
+    }
+}
+<style>
+    .event-card {
+        background-color: #6b6d85;
+        border: 1px solid #dee2e6;
+        border-radius: 1.55rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-card h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+
+    .event-card div {
+        margin-bottom: 0.5rem;
+    }
+
+    .event-card label {
+        font-weight: bold;
+    }
+
+    .event-card input {
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+    }
+</style>
+<div class="event-card">
+    <h3>Event Card</h3>
+
+    @if (!IsReadOnly)
+    {
+        <div>
+            <label>Name:</label>
+            <input value="@EventName" @oninput="OnNameChanged" />
+        </div>
+        <div>
+            <label>Date:</label>
+            <input type="date" value="@EventDate.ToString("yyyy-MM-dd")" @oninput="OnDateChanged" />
+        </div>
+        <div>
+            <label>Location:</label>
+            <input value="@EventLocation" @oninput="OnLocationChanged" />
+        </div>
+        <div>
+            <label>Description:</label>
+            <input value="@EventDescription" @oninput="OnDescriptionChanged" />
+        </div>
+        <div>
+            <label>Color:</label>
+            <input type="color" @bind="Color"/>
+            </div>
+
+        <div style="margin-top:1em;">
+            <strong>Preview:</strong>
+            <div>@EventName</div>
+            <div>@EventDate.ToString("D")</div>
+            <div>@EventLocation</div>
+        </div>
+    }
+    else
+    {
+        <div><label>Name: </label>@EventName</div>
+        <div><label>Date: </label>@EventDate.ToString("D")</div>
+        <div><label>Location: </label>@EventLocation</div>
+    }
+</div>
+

@@ -1,0 +1,73 @@
+@page "/eventdetails"
+@using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventService EventService
+
+<h1 class="text-center mb-4">Event Calendar</h1>
+
+<div class="calendar-controls text-center mb-3">
+    <h3>@currentMonthName @currentYear</h3>
+</div>
+
+<div class="calendar-grid">
+    @foreach (var day in daysInMonth)
+    {
+        var eventsForDay = EventService.GetEvents()
+            .Where(e => e.Date.Date == day.Date)
+            .ToList();
+
+        <div class="calendar-day">
+            <div class="date-number">@day.Day</div>
+            @if (eventsForDay.Any())
+            {
+                @foreach (var evt in eventsForDay)
+                {
+                    <div class="event-box" style="background-color:@evt.Color" title="@evt.Name - @evt.Description">
+                        @evt.Name
+                    </div>
+                }
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .calendar-day {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        min-height: 100px;
+        position: relative;
+    }
+
+    .date-number {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+    }
+
+    .event-box {
+        padding: 0.2rem;
+        border-radius: 0.25rem;
+        color: white;
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+        cursor: pointer;
+    }
+</style>
+
+@code {
+    private int currentMonth = DateTime.Now.Month;
+    private int currentYear = DateTime.Now.Year;
+    private string currentMonthName => new DateTime(currentYear, currentMonth, 1).ToString("MMMM");
+    private List<DateTime> daysInMonth => Enumerable.Range(1, DateTime.DaysInMonth(currentYear, currentMonth))
+        .Select(day => new DateTime(currentYear, currentMonth, day))
+        .ToList();
+}

@@ -1,0 +1,33 @@
+@page "/eventlist"
+@inject EventService EventService
+@using EventEaseApp.Models
+@using EventEaseApp.Services;
+
+<h1 class="text-center">Event List</h1>
+
+<!-- 🔸 Iteramos sobre los eventos registrados -->
+@if (EventService.GetEvents().Any())
+{
+    @foreach (var evt in EventService.GetEvents())
+    {
+        <EventCard 
+            EventName="@evt.Name" 
+            EventDate="@evt.Date" 
+            EventLocation="@evt.Location" 
+            IsReadOnly="true"
+        />
+    }
+}
+else
+{
+    <p class="text-center text-muted">No events registered.</p>
+}
+
+<!-- 🔸 Navegación -->
+<nav class="nav-menu text-center mt-4">
+    <ul class="list-unstyled d-flex justify-content-center gap-3">
+        <li><a href="/eventlist" class="btn btn-outline-primary">Event List</a></li>
+        <li><a href="/eventdetails" class="btn btn-outline-primary">Event Details</a></li>
+        <li><a href="/register" class="btn btn-primary">Register</a></li>
+    </ul>
+</nav>
