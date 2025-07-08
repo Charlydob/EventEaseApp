@@ -5,26 +5,50 @@
 
 <h1 class="text-center mb-4">Event Calendar</h1>
 
-<div class="calendar-controls text-center mb-3">
-    <h3>@currentMonthName @currentYear</h3>
+<div class="calendar-controls text-center mb-3 d-flex justify-content-center gap-2 flex-wrap">
+    <button class="btn btn-outline-secondary" @onclick="ShowPreviousMonth">←</button>
+    <button class="btn btn-outline-primary" @onclick="GoToToday">Hoy</button>
+    <strong class="mx-2 align-self-center">@currentMonthName @currentYear</strong>
+    <button class="btn btn-outline-danger" @onclick="GoToNextEvent">Próximo evento</button>
+    <button class="btn btn-outline-secondary" @onclick="ShowNextMonth">→</button>
+</div>
+
+
+<!-- Encabezado con días de la semana -->
+<div class="calendar-grid calendar-weekdays">
+    <div>Lun</div>
+    <div>Mar</div>
+    <div>Mié</div>
+    <div>Jue</div>
+    <div>Vie</div>
+    <div>Sáb</div>
+    <div>Dom</div>
 </div>
 
 <div class="calendar-grid">
     @foreach (var day in daysInMonth)
     {
-        var eventsForDay = EventService.GetEvents()
-            .Where(e => e.Date.Date == day.Date)
-            .ToList();
-
-        <div class="calendar-day">
-            <div class="date-number">@day.Day</div>
-            @if (eventsForDay.Any())
+<div class="calendar-day @(IsToday(day) ? "today" : "") @(IsNextEvent(day) ? "next-event" : "")">
+            @if (day.HasValue)
             {
-                @foreach (var evt in eventsForDay)
+                <div class="date-number">@day.Value.Day</div>
+
+                var eventsForDay = EventService.GetEvents()
+                    .Where(e => e.Date.Date == day.Value.Date)
+                    .ToList();
+
+                if (eventsForDay.Any())
                 {
-                    <div class="event-box" style="background-color:@evt.Color" title="@evt.Name - @evt.Description">
-                        @evt.Name
-                    </div>
+                    foreach (var evt in eventsForDay)
+                    {
+                        <div class="event-box" style="background-color:@evt.Color" title="@evt.Name - @evt.Description">
+                            <div><strong>@evt.Name</strong></div>
+                            @if (evt.IsAttending)
+                            {
+                                <div class="text-success" style="font-size: 0.7rem;">✔ Confirmed</div>
+                            }
+                        </div>
+                    }
                 }
             }
         </div>
@@ -37,6 +61,13 @@
         grid-template-columns: repeat(7, 1fr);
         gap: 1rem;
         padding: 1rem;
+    }
+
+    .calendar-weekdays {
+        text-align: center;
+        font-weight: bold;
+        padding: 0 1rem;
+        margin-bottom: -1rem;
     }
 
     .calendar-day {
@@ -54,20 +85,107 @@
     }
 
     .event-box {
-        padding: 0.2rem;
+        padding: 0.4rem;
         border-radius: 0.25rem;
         color: white;
         font-size: 0.75rem;
         margin-top: 0.25rem;
         cursor: pointer;
     }
+    .calendar-day.today {
+    border: 2px solid #007bff;
+    }
+
+    .calendar-day.next-event {
+    border: 2px solid #dc3545;
+    }
+
 </style>
 
 @code {
     private int currentMonth = DateTime.Now.Month;
     private int currentYear = DateTime.Now.Year;
+
     private string currentMonthName => new DateTime(currentYear, currentMonth, 1).ToString("MMMM");
-    private List<DateTime> daysInMonth => Enumerable.Range(1, DateTime.DaysInMonth(currentYear, currentMonth))
-        .Select(day => new DateTime(currentYear, currentMonth, day))
+
+    private List<DateTime?> daysInMonth
+    {
+        get
+        {
+            var firstDay = new DateTime(currentYear, currentMonth, 1);
+            var totalDays = DateTime.DaysInMonth(currentYear, currentMonth);
+            var days = new List<DateTime?>();
+
+            // Día de la semana (lunes = 0, domingo = 6)
+            int offset = ((int)firstDay.DayOfWeek + 6) % 7;
+
+            // Espacios vacíos antes del día 1
+            for (int i = 0; i < offset; i++)
+            {
+                days.Add(null);
+            }
+
+            // Días del mes
+            for (int i = 1; i <= totalDays; i++)
+            {
+                days.Add(new DateTime(currentYear, currentMonth, i));
+            }
+
+            return days;
+        }
+    }
+
+    private void ShowPreviousMonth()
+    {
+        currentMonth--;
+        if (currentMonth < 1)
+        {
+            currentMonth = 12;
+            currentYear--;
+        }
+    }
+
+    private void ShowNextMonth()
+    {
+        currentMonth++;
+        if (currentMonth > 12)
+        {
+            currentMonth = 1;
+            currentYear++;
+        }
+    }
+    private DateTime today = DateTime.Today;
+private DateTime? nextUpcomingEvent;
+
+private void GoToToday()
+{
+    currentMonth = today.Month;
+    currentYear = today.Year;
+}
+
+private void GoToNextEvent()
+{
+    var futureEvents = EventService.GetEvents()
+        .Where(e => e.Date.Date >= today)
+        .OrderBy(e => e.Date)
         .ToList();
+
+    if (futureEvents.Any())
+    {
+        nextUpcomingEvent = futureEvents.First().Date.Date;
+        currentMonth = nextUpcomingEvent.Value.Month;
+        currentYear = nextUpcomingEvent.Value.Year;
+    }
+}
+
+private bool IsToday(DateTime? day)
+{
+    return day.HasValue && day.Value.Date == today;
+}
+
+private bool IsNextEvent(DateTime? day)
+{
+    return nextUpcomingEvent.HasValue && day.HasValue && day.Value.Date == nextUpcomingEvent.Value.Date;
+}
+
 }

@@ -35,6 +35,20 @@
         Color = e.Value?.ToString() ?? "#007bff";
         await ColorChanged.InvokeAsync(Color);
     }
+    private List<string> ColorOptions = new() 
+    { 
+        "#007bff", // azul
+        "#28a745", // verde
+        "#dc3545", // rojo
+        "#ffc107", // amarillo
+        "#6f42c1"  // púrpura
+    };
+
+    private async Task SelectColor(string selected)
+    {
+        Color = selected;
+        await ColorChanged.InvokeAsync(Color);
+    }
 
 
     private async Task OnNameChanged(ChangeEventArgs e)
@@ -63,10 +77,15 @@
         EventDescription = e.Value?.ToString() ?? string.Empty;
         await EventDescriptionChanged.InvokeAsync(EventDescription);
     }
+    private string GetCardStyle()
+    {
+        return IsReadOnly ? $"background-color: {Color};" : "";
+    }
+
 }
 <style>
     .event-card {
-        background-color: #6b6d85;
+        background-color: @(IsReadOnly ? Color : "#6b6d85");
         border: 1px solid #dee2e6;
         border-radius: 1.55rem;
         padding: 1rem;
@@ -92,15 +111,44 @@
         border-radius: 0.25rem;
         border: 1px solid #ced4da;
     }
+    .color-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    }
+
+    .color-button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: border 0.2s ease;
+    }
+
+    .color-button.selected {
+        border: 2px solid white;
+        box-shadow: 0 0 0 2px black;
+    }
+    .event-card input::placeholder {
+    color: #bbb; /* gris pálido */
+    opacity: 1; /* que no se vea semitransparente */
+    }
+    .event-card input:focus {
+        border-color: #80bdff; /* azul claro */
+        box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.25); /* sombra azul clara */
+    }
+
 </style>
-<div class="event-card">
+<div class="event-card" style="@GetCardStyle()">
+
     <h3>Event Card</h3>
 
     @if (!IsReadOnly)
     {
         <div>
             <label>Name:</label>
-            <input value="@EventName" @oninput="OnNameChanged" />
+            <input value="@EventName" placeholder="Event name..." @oninput="OnNameChanged" />
         </div>
         <div>
             <label>Date:</label>
@@ -108,16 +156,25 @@
         </div>
         <div>
             <label>Location:</label>
-            <input value="@EventLocation" @oninput="OnLocationChanged" />
+            <input value="@EventLocation" placeholder="Location..." @oninput="OnLocationChanged" />
         </div>
         <div>
             <label>Description:</label>
-            <input value="@EventDescription" @oninput="OnDescriptionChanged" />
+            <input value="@EventDescription" placeholder="Description..." @oninput="OnDescriptionChanged" />
         </div>
         <div>
-            <label>Color:</label>
-            <input type="color" @bind="Color"/>
-            </div>
+            <label>Choose a color:</label>
+            <div class="color-options">
+        @foreach (var option in ColorOptions)
+        {
+            <button type="button"
+                    class="color-button @(Color == option ? "selected" : "")"
+                    style="background-color:@option"
+                    @onclick="() => SelectColor(option)">
+            </button>
+        }
+        </div>
+</div>
 
         <div style="margin-top:1em;">
             <strong>Preview:</strong>

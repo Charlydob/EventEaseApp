@@ -1277,8 +1277,6 @@ E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\Wi
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\mscorlib.ypkr78tz1c.wasm
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\netstandard.ifx8vojh9u.wasm
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\System.Private.CoreLib.gcclii65ud.wasm
-E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.7dgorrte3m.wasm
-E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.7kt41e1nb7.pdb
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.n7we7nbch1.wasm.gz
@@ -1481,8 +1479,6 @@ E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\do
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.7dgorrte3m.wasm.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.7kt41e1nb7.pdb.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\sample-data\weather.json
 E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\_framework\blazor.boot.json
@@ -1896,7 +1892,6 @@ E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\scopedcss\projectbund
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\blazor.build.boot-extension.json
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\blazor.boot.json
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\eotnszvkb1-h60zchgj5e.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\413vp4cml5-bepv1uslm3.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\th6pzune3g-t1cqhe9u97.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\2l52lnvn0l-c2jlpeoesf.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\2xhm8ivb61-sejl45xvog.gz
@@ -2145,9 +2140,6 @@ E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\9vf3knw6hc
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\r489smiiq7-tjcz0u77k5.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\qvouh2q4mf-tptq2av103.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\hcxylcfklo-lfu7j35m59.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\skwk8s9ui1-7dgorrte3m.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\c1jhhq4o6d-7kt41e1nb7.gz
-E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\a1w0b3e4ey-6sdx9q07cv.gz
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\staticwebassets.build.json
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\staticwebassets.build.json.cache
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\staticwebassets.development.json
@@ -2157,3 +2149,11 @@ E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\EventEaseApp.dll
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\refint\EventEaseApp.dll
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\EventEaseApp.pdb
 E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\ref\EventEaseApp.dll
+E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\413vp4cml5-525h2ik930.gz
+E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.3qhuxvqtjv.wasm
+E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.okohccr6kt.pdb
+E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.3qhuxvqtjv.wasm.gz
+E:\Proyectos\Repos\EventEaseApp.github.io\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.okohccr6kt.pdb.gz
+E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\skwk8s9ui1-3qhuxvqtjv.gz
+E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\c1jhhq4o6d-okohccr6kt.gz
+E:\Proyectos\Repos\EventEaseApp.github.io\obj\Debug\net9.0\compressed\a1w0b3e4ey-w72pnociii.gz

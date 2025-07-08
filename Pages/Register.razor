@@ -11,48 +11,73 @@ body { background: #e0e0e0; }
     width:100%;max-width:400px;margin:5vh auto;
 }
 .event-card input { width:100%; margin-bottom:1rem; padding:0.4rem; }
+.validation-message { color: #ff8080; font-size: 0.9rem; }
 </style>
 
 <div class="register-container">
     <h2 class="text-center mb-4">Register Event</h2>
 
-    <EventCard
-    EventName="@eventName"
-    EventDate="@eventDate"
-    EventLocation="@eventLocation"
-    EventDescription="@eventDescription"
-    EventNameChanged="e=>eventName=e"
-    EventDateChanged="d=>eventDate=d"
-    EventLocationChanged="l=>eventLocation=l"
-    EventDescriptionChanged="d=>eventDescription=d" />
+    <EditForm Model="eventModel" OnValidSubmit="RegisterEvent">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-    <button class="btn btn-success w-100" @onclick="RegisterEvent">Save Event</button>
+        <EventCard
+            EventName="@eventModel.Name"
+            EventDate="@eventModel.Date"
+            EventLocation="@eventModel.Location"
+            EventDescription="@eventModel.Description"
+            Color="@eventModel.Color"
+            EventNameChanged="e => eventModel.Name = e"
+            EventDateChanged="d => eventModel.Date = d"
+            EventLocationChanged="l => eventModel.Location = l"
+            EventDescriptionChanged="d => eventModel.Description = d"
+            ColorChanged="c => eventModel.Color = c" />
+
+        <div class="form-check my-2">
+            <input class="form-check-input" type="checkbox" id="attendCheck" @bind="eventModel.IsAttending" />
+            <label class="form-check-label" for="attendCheck">
+                Will you attend?
+            </label>
+        </div>
+
+        <button class="btn btn-success w-100" type="submit">Save Event</button>
+    </EditForm>
+
+    @if (!string.IsNullOrEmpty(feedbackMessage))
+    {
+        <div class="alert alert-info mt-3 text-center">@feedbackMessage</div>
+    }
 
     <nav class="mt-4 text-center">
-    <a href="/eventlist" class="btn btn-outline-light m-1">Event List</a>
-    <a href="/eventdetails" class="btn btn-outline-light m-1">Event Details</a>
-    <a href="/register" class="btn btn-light m-1">Register</a>
+        <a href="/eventlist" class="btn btn-outline-light m-1">Event List</a>
+        <a href="/eventdetails" class="btn btn-outline-light m-1">Event Details</a>
+        <a href="/register" class="btn btn-light m-1">Register</a>
     </nav>
-    <div class="form-group">
-    <label for="eventColor">Color:</label>
-    <input type="color" id="eventColor" class="form-control" @bind="eventColor" /></div>
 </div>
 
 @code {
-    private string eventName = "";
-    private DateTime eventDate = DateTime.Now;
-    private string eventLocation = "";
-    private string eventDescription = "";
-    private string eventColor = "#007bff";
+    private EventData eventModel = new EventData
+    {
+        Date = DateTime.Today
+    };
+
+    private string feedbackMessage = "";
 
     private void RegisterEvent()
     {
-    EventService.AddEvent(new EventData { Name = eventName, Date = eventDate, Location = eventLocation, Description = eventDescription, Color = eventColor });
-
-    // Opcional: limpiar campos
-    eventName = "";
-    eventDate = DateTime.Now;
-    eventLocation = "";
-    eventDescription = "";
+        try
+        {
+            EventService.AddEvent(eventModel);
+            feedbackMessage = "Event registered successfully!";
+            eventModel = new EventData
+            {
+                Date = DateTime.Today
+            }; // Clear form with today's date
+        }
+        catch
+        {
+            feedbackMessage = "There was an error saving the event.";
+        }
     }
 }
+
