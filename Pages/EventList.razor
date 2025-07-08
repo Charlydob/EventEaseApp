@@ -30,22 +30,3 @@ else
     <p class="text-center text-muted">No events registered.</p>
 }
 
-<nav class="nav-menu text-center mt-4">
-    <ul class="list-unstyled d-flex justify-content-center gap-3">
-        <li>
-            <button class="btn btn-outline-primary" @onclick="@(() => NavigationManager.NavigateTo("eventlist"))">
-                Event List
-            </button>
-        </li>
-        <li>
-            <button class="btn btn-outline-primary" @onclick="@(() => NavigationManager.NavigateTo("eventdetails"))">
-                Event Details
-            </button>
-        </li>
-        <li>
-            <button class="btn btn-primary" @onclick="@(() => NavigationManager.NavigateTo("register"))">
-                Register
-            </button>
-        </li>
-    </ul>
-</nav>
